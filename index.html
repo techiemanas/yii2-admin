@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Yii2-admin by mdmsoft</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Yii2-admin</h1>
+        <h2>Auth manager for Yii2 </h2>
+        <a href="https://github.com/mdmsoft/yii2-admin" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="rbac-manager-for-yii-2" class="anchor" href="#rbac-manager-for-yii-2"><span class="octicon octicon-link"></span></a>RBAC Manager for Yii 2</h1>
+
+<h2>
+<a name="dosc" class="anchor" href="#dosc"><span class="octicon octicon-link"></span></a>Dosc:</h2>
+
+<ul>
+<li>
+<a href="CHANGELOG.md">change log</a>.</li>
+<li>
+<a href="docs/guide/basic-usage.md">Basic Usage</a>.</li>
+<li>
+<a href="docs/guide/using-menu.md">Using Menu</a>.</li>
+</ul><h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>The preferred way to install this extension is through <a href="http://getcomposer.org/download/">composer</a>.</p>
+
+<p>Either run</p>
+
+<pre><code>php composer.phar require mdmsoft/yii2-admin "*"
+</code></pre>
+
+<p>or add</p>
+
+<pre><code>"mdmsoft/yii2-admin": "*"
+</code></pre>
+
+<p>to the require section of your <code>composer.json</code> file.</p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Once the extension is installed, simply modify your application configuration as follows:</p>
+
+<div class="highlight highlight-php"><pre><span class="k">return</span> <span class="p">[</span>
+    <span class="s1">'bootstrap'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">'admin'</span><span class="p">,</span>
+        <span class="o">...</span>
+    <span class="p">],</span>
+    <span class="s1">'modules'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">'admin'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'class'</span> <span class="o">=&gt;</span> <span class="s1">'mdm\admin\Module'</span><span class="p">,</span>
+            <span class="s1">'allowActions'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="s1">'admin/*'</span><span class="p">,</span> <span class="c1">// add or remove allowed actions to this list</span>
+            <span class="p">]</span>
+        <span class="p">]</span>
+        <span class="o">...</span>
+    <span class="p">],</span>
+    <span class="o">...</span>
+    <span class="s1">'components'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="o">....</span>
+        <span class="s1">'authManager'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'class'</span> <span class="o">=&gt;</span> <span class="s1">'yii\rbac\PhpManager'</span><span class="p">,</span> <span class="c1">// or use 'yii\rbac\DbManager'</span>
+        <span class="p">]</span>
+    <span class="p">],</span>
+<span class="p">];</span>
+</pre></div>
+
+<p>See <a href="http://www.yiiframework.com/doc-2.0/guide-authorization.html#role-based-access-control-rbac">Yii RBAC</a> for more detail.
+You can then access Auth manager through the following URL:</p>
+
+<pre><code>http://localhost/path/to/index.php?r=admin
+</code></pre>
+
+<p>To use menu manager (optional). Execute yii migration</p>
+
+<pre><code>yii migrate --migrationPath=@mdm/admin/migration
+</code></pre>
+
+<p><a href="https://picasaweb.google.com/105012704576561549351/Yii2Admin?authuser=0&amp;feat=directlink">screenshots</a></p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/mdmsoft/yii2-admin/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/mdmsoft/yii2-admin/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/mdmsoft/yii2-admin"></a> is maintained by <a href="https://github.com/mdmsoft">mdmsoft</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
