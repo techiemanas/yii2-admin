@@ -46,7 +46,7 @@ use yii\helpers\Url;
             action: function() {
                 var action = $(this).data('action');
                 var params = $((action == 'assign' ? '#new' : '#exists') + ', .role-search').serialize();
-                $.post('<?= Url::toRoute(['assign']) ?>&action=' + action,
+                $.post('<?= Url::toRoute(['assign']) ?>?action=' + action,
                     params, function(r) {
                         $('#new').html(r[0]);
                         $('#exists').html(r[1]);
